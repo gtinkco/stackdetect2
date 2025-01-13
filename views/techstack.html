@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Stack Analyzer - StackDetect</title>
+   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/techstack.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">StackDetect</div>
+            <div class="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="tools.html">Tools</a>
+                <button class="cta-button-small" onclick="window.location.href='login.html'">Login</button>
+            </div>
+        </nav>
+        <h1>Tech Stack Analyzer</h1>
+        <p>Enter a URL to analyze the tech stack used by a website.</p>
+    </header>
+
+    <main>
+        <section class="tool-section">
+            <h2>Analyze Website Tech Stack</h2>
+            <div class="input-container">
+                <input type="text" id="urlInput" placeholder="Enter website URL (e.g., https://www.example.com)">
+                <button onclick="analyzeTechStack()">Analyze</button>
+            </div>
+            <div id="resultContainer" class="result-container">
+                <!-- Results will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 StackDetect</p>
+    </footer>
+
+    <script>
+        function analyzeTechStack() {
+            var url = document.getElementById("urlInput").value;
+            if (!url) {
+                alert("Please enter a valid URL.");
+                return;
+            }
+            document.getElementById("resultContainer").innerHTML = "<p>Analyzing... Please wait...</p>";
+
+            // For demo, we simulate the result.
+            setTimeout(function() {
+                var result = `
+                    <h3>Tech Stack Used by ${url}</h3>
+                    <ul>
+                        <li><strong>Front-End Framework:</strong> React</li>
+                        <li><strong>Back-End Framework:</strong> Node.js</li>
+                        <li><strong>Database:</strong> MongoDB</li>
+                        <li><strong>Hosting:</strong> AWS</li>
+                        <li><strong>Analytics:</strong> Google Analytics</li>
+                    </ul>
+                `;
+                document.getElementById("resultContainer").innerHTML = result;
+            }, 2000); // Simulate a delay for fetching and analyzing
+        }
+    </script>
+</body>
+
+</html>

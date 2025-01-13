@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Technologies</title>
+    <link rel="stylesheet" href="/css/trending.css"> <!-- Optional CSS -->
+</head>
+<body>
+    <div class="trending-container">
+        <h1>Trending Technologies</h1>
+        <ul>
+            <% trendingTechnologies.forEach(tech => { %>
+                <li>
+                    <h2><%= tech.name %></h2>
+                    <p>Category: <%= tech.category %></p>
+                    <p>Popularity: <%= tech.popularity %>%</p>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>

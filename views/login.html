@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - StackDetect</title>
+  <link rel="stylesheet" href="/css/login.css"> <!-- Link to your external CSS file -->
+</head>
+<body>
+
+  <h1>Login</h1>
+  <form id="loginForm">
+    <input type="email" id="email" name="email" placeholder="Email" required><br>
+    <input type="password" id="password" name="password" placeholder="Password" required><br>
+    <button type="submit">Login</button>
+  </form>
+
+  <!-- Splash screen -->
+  <div class="splash-screen" id="splashScreen">User Successfully Logged In!</div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      try {
+        const response = await fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          // Show splash screen
+          const splashScreen = document.getElementById('splashScreen');
+          splashScreen.style.display = 'flex';
+
+          // Wait 3 seconds and then redirect
+          setTimeout(() => {
+            window.location.href = result.redirectUrl || '/dashboard.html';
+          }, 3000); // 3-second delay
+        } else {
+          alert('Login failed: ' + result.message);
+        }
+      } catch (err) {
+        console.error('Error:', err);
+        alert('An error occurred during login.');
+      }
+    });
+  </script>
+
+</body>
+</html>

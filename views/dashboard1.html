@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <!-- Sidebar / Navigation -->
+    <nav class="sidebar">
+        <div class="logo">StackDetect</div>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Technology Lookup</a></li>
+            <li><a href="#">Trending Technologies</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><button id="logout" class="logout-button">Logout</button></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <h1>Welcome to the Dashboard</h1>
+        <p>Your workspace is all set! Start by reviewing your stats or adding new ones.</p>
+
+        <!-- Dashboard Overview -->
+        <section class="overview">
+            <h2>Overview</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <p>Total Websites Analyzed</p>
+                    <h3>1,200</h3>
+                </div>
+                <div class="stat-item">
+                    <p>Technologies Detected</p>
+                    <h3>250</h3>
+                </div>
+                <div class="stat-item">
+                    <p>Reports Generated</p>
+                    <h3>30</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Box for Website Lookup -->
+        <section class="search">
+            <input type="text" placeholder="Enter website URL">
+            <button>Search</button>
+        </section>
+
+        <!-- Trending Technologies -->
+        <section class="trending">
+            <h2>Trending Technologies</h2>
+            <div class="tech-list">
+                <div class="tech-item">React - 3000 websites</div>
+                <div class="tech-item">WordPress - 2500 websites</div>
+                <div class="tech-item">AWS - 2200 websites</div>
+            </div>
+            <div class="tech-chart">
+                <!-- Graph/Chart goes here -->
+            </div>
+        </section>
+
+        <!-- Recent Reports -->
+        <section class="reports">
+            <h2>Recent Reports</h2>
+            <ul>
+                <li><a href="#">SqwidERP</a></li>
+                <li><a href="#">GTINK DESIGN & CO </a></li>
+                <li><a href="#">FriendlyC</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Support</a></li>
+        </ul>
+    </footer>
+
+    <script>
+      document.getElementById('logout').addEventListener('click', function() {
+        localStorage.removeItem('authToken'); // Clear token from localStorage
+        window.location.href = '/'; // Redirect back to the homepage
+      });
+    </script>
+</body>
+</html>

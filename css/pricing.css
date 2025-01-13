@@ -1,0 +1,126 @@
+
+h1, h2, h3 {
+    color: #00FFF7;
+    font-weight: 600;
+}
+
+header.pricing-header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header.pricing-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header.pricing-header p {
+    font-size: 1.2rem;
+    color: #f4f4f9;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.pricing-card {
+    background-color: #1a2b3c;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+}
+
+.trial-plan {
+    background-color: #8e44ad;
+    color: #ffffff;
+}
+
+.mid-tier-plan {
+    background-color: #00bfa6;
+    color: #ffffff;
+}
+
+.premium-plan {
+    background-color: #f39c12;
+    color: #ffffff;
+}
+
+.pricing-card.highlighted {
+    transform: scale(1.05);
+}
+
+.pricing-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.feature-list li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    background-color: #FF6F61;
+    color: #121212;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: all 0.3s ease-out;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #00FFF7;
+    color: #121212;
+    transform: translateY(-4px);
+}
+
+.back-to-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #FF6F61;
+    color: #121212;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.back-to-home:hover {
+    background-color: #00FFF7;
+    transform: translateY(-4px);
+}
+
+footer {
+    background-color: #1a2b3c;
+    color: #f4f4f9;
+    padding: 20px 0;
+    text-align: center;
+}

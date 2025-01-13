@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css"> <!-- Include the general styles -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Include the general styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-summary">
+                <!-- Profile icon instead of an image -->
+                <i class="profile-icon fas fa-user-circle"></i> <!-- Font Awesome Icon -->
+                <h3><%= username %></h3>
+                <p>Plan: <%= plan %></p>
+            </div>
+            <ul class="menu">
+                <li><a href="/dashboard" class="active"><span class="icon">🏠</span> Dashboard</a></li>
+                <li><a href="/profile"><span class="icon">👤</span> Integrated Code Editor</a></li>
+                <li><a href="/settings"><span class="icon">⚙️</span> Task Manager</a></li>
+                <li><a href="/tools"><span class="icon">🛠️</span> Analytics</a></li>
+                <li><a href="/reports"><span class="icon">📊</span> Reports</a></li>
+                <li><a href="/notifications"><span class="icon">🔔</span> Notifications</a></li>
+                <li><a href="/trendingtechnologies"><span class="icon">🚀</span> Trending Technologies</a></li>
+                <li><a href="/techstack"><span class="icon">🚀</span> Tech Stack</a></li>
+                <li><a href="/api"><span class="icon">📘</span> API Tracker</a></li>
+                <li><a href="/"><span class="icon">🔓</span> Log Out</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Welcome, <%= username %>!</h1>
+                <div class="quick-actions">
+                    <button class="btn action-btn">New Report --- for what </button>
+                    <button class="btn action-btn">What to put here</button>
+                </div>
+            </header>
+
+            <!-- Stats Section -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Subscription Plan</h3>
+                    <p>Active Plan: <%= plan %></p>
+                </div>
+                <div class="stat-card">
+                    <h3>Last Login</h3>
+                    <p>Yesterday, 2:45 PM</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Account Usage</h3>
+                    <p>Storage: 75% Used</p>
+                </div>
+                <div class="stat-card highlight">
+                    <h3>Next Billing Cycle</h3>
+                    <p>March 15, 2025</p>
+                </div>
+            </section>
+
+            <!-- Tools Section -->
+            <section class="tools">
+                <h2>Your Tools</h2>
+                <ul class="tool-list">
+                    <li><a href="/views/techstack"><S></S></a></li>
+                    <li><a href="/views/api">A</a></li>
+                    <li><a href="/tools/task-manager">T</a></li>
+                    <li><a href="/tools/analytics">A</a></li>
+                    <li><a href="/tools/task-manager">T</a></li>
+                    <li><a href="/tools/analytics">A</a></li>
+                    <li><a href="/tools/task-manager">T</a></li>
+                    <li><a href="/tools/analytics">A</a></li>
+                    <li><a href="/tools/task-manager">T</a></li>
+                    <li><a href="/tools/analytics">A</a></li>
+                    <li><a href="/tools/task-manager">T</a></li>
+                    <li><a href="/tools/analytics">A</a></li>
+                    <li><a href="/tools/task-manager">T</a></li>
+                    <li><a href="/tools/analytics">A</a></li>
+                    
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

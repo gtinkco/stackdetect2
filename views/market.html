@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/market.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Marketplace Analyzer</h1>
+    </div>
+
+    <div class="content">
+        <div class="marketplace-selector">
+            <label for="marketplace">Select a Marketplace:</label>
+            <select id="marketplace">
+                <option value="E-commerce">E-commerce</option>
+                <option value="SaaS">SaaS</option>
+                <option value="AI/ML">AI/ML</option>
+                <option value="App Stores">App Stores</option>
+                <option value="Gaming">Gaming</option>
+            </select>
+        </div>
+
+        <div class="trending-section">
+            <h2>Trending Tech Stacks</h2>
+            <div id="tech-stack-list" class="tech-stack-list">
+                <!-- Dynamic content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

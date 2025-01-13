@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+}
+
+.trending-container {
+    padding: 20px;
+}
+
+.trending-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.filters select {
+    background-color: #1e1e1e;
+    color: #00eaff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.trending-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.tech-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+}
+
+.tech-card h3 {
+    color: #00eaff;
+}
+
+.insights {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.insight-card {
+    display: inline-block;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    margin: 10px;
+    width: 250px;
+}

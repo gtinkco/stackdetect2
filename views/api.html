@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Tester Tool</title>
+    <link rel="stylesheet" href="/css/api.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>API Tester</h1>
+        
+        <!-- Form to accept API request parameters -->
+        <form id="api-form">
+            <div class="input-group">
+                <label for="url">API URL:</label>
+                <input type="text" id="url" placeholder="Enter API URL" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="method">HTTP Method:</label>
+                <select id="method">
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option>
+                    <option value="PUT">PUT</option>
+                    <option value="DELETE">DELETE</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="headers">Headers (JSON):</label>
+                <textarea id="headers" placeholder='{"Authorization": "Bearer YOUR_TOKEN"}'></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="body">Body (JSON for POST/PUT):</label>
+                <textarea id="body" placeholder='{"name": "John"}'></textarea>
+            </div>
+
+            <button type="submit">Send Request</button>
+        </form>
+
+        <div class="response">
+            <h2>Response</h2>
+            <div id="status"></div>
+            <div id="response-body"></div>
+            <div id="response-time"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to the JS file -->
+</body>
+</html>

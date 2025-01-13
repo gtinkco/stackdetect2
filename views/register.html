@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="/css/register.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">   
+  
+  <style>
+    /* Splash screen styles */
+    .splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #00eaff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-family: 'Exo', sans-serif;
+      z-index: 9999;
+      display: none; /* Hidden by default */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1 class="form-title">Register Now</h1>
+
+    <form id="registerForm" class="registration-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="plan">Plan</label>
+        <select id="plan" name="plan">
+          <option value="basic">Trial Plan</option>
+          <option value="pro">Pro Tier Plan</option>
+          <option value="premium">Premium Tier Plan</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Register</button>
+    </form>
+  </div>
+
+  <!-- Splash screen -->
+  <div class="splash-screen" id="splashScreen">User Successfully Registered!</div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const plan = document.getElementById('plan').value;
+
+      try {
+        const response = await fetch('/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, email, password, plan })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          // Show splash screen
+          const splashScreen = document.getElementById('splashScreen');
+          splashScreen.style.display = 'flex';
+
+          // Wait 3 seconds and then redirect
+          setTimeout(() => {
+            window.location.href = result.redirectUrl || '/login.html';
+          }, 3000); // 3-second delay
+        } else {
+          alert('Registration failed: ' + (result.message || 'An unknown error occurred'));
+        }
+      } catch (err) {
+        console.error('Error:', err);
+        alert('An error occurred during registration.');
+      }
+    });
+  </script>
+
+</body>
+</html>

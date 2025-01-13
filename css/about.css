@@ -1,0 +1,103 @@
+
+
+/* About Section */
+.about-section {
+    padding: 40px 20px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.about-content {
+   
+
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 1.8em;
+    color: #00eaff; /* Accent color consistent with the rest of the site */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.about-content p,
+.about-content ul {
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.about-content ul {
+    padding-left: 20px;
+    list-style: none;
+    text-align: center;
+}
+
+.about-content ul li::before {
+    content: "✔ ";
+    color: #ff1100;
+    margin-right: 5px;
+    
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.cta-section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-section .cta-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #f1f1f1;
+    border: none;
+    color: #121212;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-section .cta-button:hover {
+    background-color: #c2c2c2;
+}
+
+/* Scroll Buttons */
+.scroll-to-bottom, .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF6F61;
+    color: #121212;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    display: none; /* Initially hidden */
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 24px; /* Center the arrow vertically */
+}
+
+.scroll-to-bottom:hover, .scroll-to-top:hover {
+    background-color: #00FFF7;
+    transform: translateY(-4px);
+}
+
+/* Scroll to Top button visibility */
+.show-scroll-to-top {
+    display: block;
+}
