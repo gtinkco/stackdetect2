@@ -48,7 +48,7 @@ body {
 
 .sidebar .profile-icon {
     font-size: 60px;
-    color: #00eaff;
+    color: #fff;
 }
 
 .sidebar h3 {
@@ -86,7 +86,7 @@ body {
 }
 
 .sidebar .menu .active {
-    background-color: #00eaff;
+    background-color: #416950;
 }
 
 /* Main Content */
