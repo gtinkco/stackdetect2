@@ -1,192 +1,357 @@
-/* Body */
+/* General Styles */
 body {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Arial', sans-serif;
     background-color: #121212;
     color: #fff;
     margin: 0;
     padding: 0;
 }
-
-/* Dashboard Container */
-.dashboard-container {
-    display: flex;
-    height: 100vh;
-}
-
+.view-task-btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00eaff;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .view-task-btn a:hover {
+    background-color: #007b8f;
+  }
+  
 /* Sidebar */
 .sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
     position: fixed;
     top: 0;
     left: 0;
-    width: 280px; /* Sidebar width */
-    background-color: #1e1e1e;
-    padding: 20px;
-    text-align: center;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    overflow-y: scroll; /* Enable scrolling */
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
-/* Hide the scrollbar but still allow scrolling */
-.sidebar::-webkit-scrollbar {
-    width: 0; /* Remove scrollbar width */
-    height: 0; /* Remove scrollbar height */
+.profile-summary {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.sidebar {
-    -ms-overflow-style: none; /* For IE and Edge */
-    scrollbar-width: none; /* For Firefox */
-}
-
-/* Profile Summary */
-.sidebar .profile-summary {
-    margin-bottom: 30px;
-}
-
-.sidebar .profile-icon {
+.profile-icon {
     font-size: 60px;
-    color: #fff;
+    color: #00eaff;
 }
 
-.sidebar h3 {
-    font-size: 1.5rem;
+.profile-summary h3 {
+    color: #fff;
     margin-top: 10px;
 }
 
-.sidebar p {
-    font-size: 1rem;
-    color: #888;
+.profile-summary p {
+    color: #ccc;
 }
 
-/* Menu */
-.sidebar .menu {
+.menu {
     list-style-type: none;
     padding: 0;
-    margin-top: auto;
 }
 
-.sidebar .menu li {
-    margin: 20px 0;
+.menu li {
+    margin: 15px 0;
 }
 
-.sidebar .menu a {
-    color: #fff;
+.menu li a {
+    color: #ccc;
     text-decoration: none;
-    font-size: 1.1rem;
-    display: block;
-    padding: 10px;
-    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
 }
 
-.sidebar .menu a:hover {
-    background-color: #333;
+.menu li a .icon {
+    margin-right: 10px;
+    font-size: 18px;
 }
 
-.sidebar .menu .active {
-    background-color: #416950;
+.menu li a:hover {
+    color: #00eaff;
+}
+
+.menu li a.active {
+    color: #00eaff;
 }
 
 /* Main Content */
 .main-content {
-    margin-left: 280px; /* Offset the main content to the right of the sidebar */
+    margin-left: 250px;
     padding: 20px;
-    background-color: #1e1e1e;
-    overflow-y: auto;
-    height: 100vh;
-    box-sizing: border-box;
 }
 
-/* Dashboard Header */
+/* Header */
 .dashboard-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
 }
 
 .dashboard-header h1 {
+    color: #00eaff;
     font-size: 2rem;
-    color: #e2e2e2;
+    margin-bottom: 10px;
 }
 
-.quick-actions {
-    display: flex;
+.account-info p {
+    color: #ccc;
+    margin: 5px 0;
 }
 
-.btn {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #00aacc;
-}
-
-/* Stats Grid */
-.stats-grid {
+/* Stats Section */
+.dashboard-stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .stat-card {
-    background-color: #333;
+    background-color: #1e1e1e;
     padding: 20px;
-    border-radius: 5px;
-    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
 .stat-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 .stat-card p {
-    font-size: 1rem;
-    color: #888;
+    color: #bbb;
 }
 
-/* Highlight Stat Card */
 .stat-card.highlight {
-    background-color: #333;
-    color: #2477bb;
+    background-color: #2d2d2d;
+    border-left: 5px solid #00eaff;
 }
 
-/* Tools Section */
-.tools {
-    margin-top: 50px;
+.stat-card:hover {
+    transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
 }
 
-.tools h2 {
-    font-size: 1.5rem;
+.stat-card .btn {
+    background-color: #00eaff;
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.stat-card .btn:hover {
+    background-color: #0095b6;
+}
+
+/* Widgets Section */
+.dashboard-widgets {
+    margin-bottom: 40px;
+}
+
+.widget-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.widget {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.widget h4 {
     color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
 }
 
-.tool-list {
+.widget ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget ul li {
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.widget ul li a {
+    color: #00eaff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.widget ul li a:hover {
+    color: #0095b6;
+}
+
+.widget .status {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.widget .status.normal {
+    color: #00eaff;
+}
+
+.widget .status.high {
+    color: #ff6b6b;
+}
+
+/* Button Styles */
+.btn-action {
+    background-color: #00eaff;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  
+}
+
+.btn-action:hover {
+    background-color: #0095b6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .widget-container {
+        grid-template-columns: 1fr;
+    }
+}/* General Styling for Activity Feed */
+.recent-activity-feed {
+    margin-top: 40px;
+}
+
+.recent-activity-feed h2 {
+    color: #00eaff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.activity-list {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.activity-item {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    color: #ddd;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-time {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-right: 10px;
+}
+
+/* Styling for Performance Graph */
+.performance-graph {
+    margin-top: 40px;
+}
+
+.graph-container {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+canvas {
+    width: 100%;
+    height: 300px;
+}
+
+/* Hover effects for menu items */
+.sidebar .menu li a:hover {
+    background-color: #333;
+    color: #00eaff;
+    cursor: pointer;
+}
+
+.widget-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.widget {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.widget h4 {
+    color: #00eaff;
+}
+
+.widget .file-list,
+.widget .notification-list,
+.widget .health-list {
     list-style-type: none;
     padding: 0;
 }
 
-.tool-list li {
-    margin: 10px 0;
+.widget .file-list li,
+.widget .notification-list li,
+.widget .health-list li {
+    color: #ddd;
+    padding: 8px 0;
 }
 
-.tool-list a {
-    color: #00eaff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+/* Status styling for server health */
+.status {
+    font-weight: bold;
+    color: #f44336; /* Red color for High */
+}
+.status[data-status="normal"] {
+    color: #4caf50; /* Green color for Normal */
 }
 
-.tool-list a:hover {
-    color: #00aacc;
-}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Authentication Manager - StackDetect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/techstack.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/api_auth.css">
+    <!-- #endregion -->
+
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="back-button" onclick="window.location.href='/tools'">🔙 Back to Tools</button>
+            <h2>API Tools</h2>
+            <ul class="menu">
+                <li><a href="/api"><span class="icon">🛠️</span> API Analyzer</a></li>
+                <li><a href="/api_auth_manager" class="active"><span class="icon">🚀</span> API Authentication Manager</a></li>
+                <li><a href="/api_playground"><span class="icon">🖥️</span> API Playground</a></li>
+                <li><a href="/something"><span class="icon">📘</span> Interactive API Documentation</a></li>
+                <li><a href="/dependencies"><span class="icon">📑</span> Dynamic Examples</a></li>
+                <li><a href="/compatibility"><span class="icon">🔄</span> API Health Status</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>API Authentication Manager</h1>
+                <p>Manage and validate your API keys for StackDetect tools.</p>
+            </header>
+
+            <!-- API Authentication Manager Section -->
+            <section class="tool-section">
+                <h2>Manage Your API Keys</h2>
+
+                <div class="api-auth-manager">
+                    <button id="generate-key-btn">Generate API Key</button>
+                    <p id="generated-key"></p>
+
+                    <label for="api-key-input">Enter API Key:</label>
+                    <input type="text" id="api-key-input" placeholder="Paste your API key here">
+
+                    <div class="button-group">
+                        <button id="save-key-btn">Save Key</button>
+                        <button id="validate-key-btn">Validate Key</button>
+                    </div>
+
+                    <h3>Saved API Keys</h3>
+                    <ul id="key-list"></ul>
+                    <button id="clear-keys-btn">Clear All Keys</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const generateKeyBtn = document.getElementById('generate-key-btn');
+            const generatedKey = document.getElementById('generated-key');
+            const saveKeyBtn = document.getElementById('save-key-btn');
+            const validateKeyBtn = document.getElementById('validate-key-btn');
+            const clearKeysBtn = document.getElementById('clear-keys-btn');
+            const apiKeyInput = document.getElementById('api-key-input');
+            const keyList = document.getElementById('key-list');
+
+            // Generate a Mock API Key
+            generateKeyBtn.addEventListener('click', () => {
+                const key = `API-${Math.random().toString(36).substr(2, 10).toUpperCase()}`;
+                generatedKey.textContent = `Generated Key: ${key}`;
+            });
+
+            // Save API Key to Local Storage
+            saveKeyBtn.addEventListener('click', () => {
+                const key = apiKeyInput.value.trim();
+                if (!key) {
+                    alert('Please enter an API key to save.');
+                    return;
+                }
+
+                const keys = JSON.parse(localStorage.getItem('apiKeys')) || [];
+                keys.push(key);
+                localStorage.setItem('apiKeys', JSON.stringify(keys));
+                displayKeys();
+                alert('API key saved successfully!');
+                apiKeyInput.value = '';
+            });
+
+            // Validate API Key (Mock Validation)
+            validateKeyBtn.addEventListener('click', () => {
+                const key = apiKeyInput.value.trim();
+                if (!key) {
+                    alert('Please enter an API key to validate.');
+                    return;
+                }
+
+                const keys = JSON.parse(localStorage.getItem('apiKeys')) || [];
+                if (keys.includes(key)) {
+                    alert('API key is valid!');
+                } else {
+                    alert('Invalid API key.');
+                }
+            });
+
+            // Display Saved Keys
+            const displayKeys = () => {
+                keyList.innerHTML = '';
+                const keys = JSON.parse(localStorage.getItem('apiKeys')) || [];
+                keys.forEach((key, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = `${index + 1}. ${key}`;
+                    keyList.appendChild(li);
+                });
+            };
+
+            // Clear All Saved Keys
+            clearKeysBtn.addEventListener('click', () => {
+                if (confirm('Are you sure you want to clear all saved API keys?')) {
+                    localStorage.removeItem('apiKeys');
+                    displayKeys();
+                }
+            });
+
+            // Initialize Key List
+            displayKeys();
+        });
+    </script>
+</body>
+
+</html>

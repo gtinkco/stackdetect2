@@ -1,0 +1,61 @@
+/* Form Section */
+.tool-section form {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+.tool-section form label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #00eaff;
+}
+
+.tool-section form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    background-color: #121212;
+    border: 1px solid #00eaff;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+
+.tool-section form textarea:focus {
+    outline: none;
+    border-color: #008fb3;
+    box-shadow: 0 0 5px rgba(0, 143, 179, 0.8);
+}
+
+.tool-section .analyze-btn {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: none;
+    background-color: #00eaff;
+    color: #121212;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.tool-section .analyze-btn:hover {
+    background-color: #008fb3;
+    transform: scale(1.05);
+}
+
+.tool-section .analyze-btn:active {
+    transform: scale(1);
+}
+
+.result-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

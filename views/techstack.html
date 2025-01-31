@@ -4,45 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Stack Analyzer - StackDetect</title>
-   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <title>Tech Stack Breakdown - StackDetect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
     <link rel="stylesheet" href="/css/techstack.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">StackDetect</div>
-            <div class="navbar-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="contact.html">Contact</a>
-                <a href="tools.html">Tools</a>
-                <button class="cta-button-small" onclick="window.location.href='login.html'">Login</button>
-            </div>
-        </nav>
-        <h1>Tech Stack Analyzer</h1>
-        <p>Enter a URL to analyze the tech stack used by a website.</p>
-    </header>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="back-button" onclick="window.location.href='/tools'">🔙 Back to Tools</button>
+            <h2>Tech Stack Tools</h2>
+            <ul class="menu">
+                <li class="active"><a href="/techstack"><span class="icon">🖥️</span>Tech Stack Breakdown</a></li>
+                <li><a href="/code-base-insight"><span class="icon">🚀</span>Code Base Insights</a></li>
+                <li><a href="/api"><span class="icon">📘</span> ###</a></li>
+                <li><a href="/dependencies"><span class="icon">🔗</span> ###</a></li>
+                <li><a href="/compatibility"><span class="icon">🔄</span> ###</a></li>
+            </ul>
+        </aside>
 
-    <main>
-        <section class="tool-section">
-            <h2>Analyze Website Tech Stack</h2>
-            <div class="input-container">
-                <input type="text" id="urlInput" placeholder="Enter website URL (e.g., https://www.example.com)">
-                <button onclick="analyzeTechStack()">Analyze</button>
-            </div>
-            <div id="resultContainer" class="result-container">
-                <!-- Results will be displayed here -->
-            </div>
-        </section>
-    </main>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Tech Stack Breakdown</h1>
+                <p>Analyze the technologies used by any website. Enter the URL below to get started.</p>
+            </header>
 
-    <footer>
-        <p>&copy; 2024 StackDetect</p>
-    </footer>
+            <!-- Tech Stack Analyzer Tool -->
+            <section class="tool-section">
+                <h2>Analyze Website Tech Stack </h2>
+                <div class="input-container">
+                    <input type="text" id="urlInput" placeholder="Enter website URL (e.g., https://www.example.com)">
+                    <button class="analyze-btn" onclick="analyzeTechStack()">Analyze</button>
+                </div>
+                <div id="resultContainer" class="result-container">
+                    <!-- Results will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    
 
     <script>
         function analyzeTechStack() {
@@ -53,7 +59,7 @@
             }
             document.getElementById("resultContainer").innerHTML = "<p>Analyzing... Please wait...</p>";
 
-            // For demo, we simulate the result.
+            // Simulate a result for demo purposes
             setTimeout(function() {
                 var result = `
                     <h3>Tech Stack Used by ${url}</h3>
@@ -66,7 +72,7 @@
                     </ul>
                 `;
                 document.getElementById("resultContainer").innerHTML = result;
-            }, 2000); // Simulate a delay for fetching and analyzing
+            }, 2000); // Simulated delay
         }
     </script>
 </body>

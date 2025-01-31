@@ -1,73 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lead Generation Tool</title>
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/leadgenerator.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Generation Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/techstack.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/tech-compatibility.css">
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <h1>Find Websites Using Your Favorite Technologies</h1>
-      <p>Generate leads by discovering websites based on their tech stack.</p>
-    </header>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="back-button" onclick="window.location.href='/tools'">🔙 Back to Tools</button>
+            <h2>Lead Generation Resources</h2>
+            <ul class="menu">
+                <li><a href="/lead-generator" class="active"><span class="icon">🔍</span> Lead Generator</a></li>
+                <li><a href="#"><span class="icon">💼</span>#RESOURCE 2#</a></li>
+                <li><a href="#"><span class="icon">⚙️</span>#RESOURCE 3#</a></li>
+                <li><a href="#"><span class="icon">📊</span>#RESOURCE 4#</a></li>
+            </ul>
+        </aside>
 
-    <div class="search-section">
-      <input type="text" id="search-input" placeholder="Search for a technology (e.g., WordPress, Shopify, React)">
-      <button id="search-btn">Search</button>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Lead Generation Tool</h1>
+                <p>Generate leads by discovering websites based on their tech stack.</p>
+            </header>
+
+            <!-- Tool Section -->
+            <section class="tool-section">
+                <h2>Find Websites</h2>
+                <form id="leadForm">
+                    <label for="searchInput">Search for a Technology:</label>
+                    <input type="text" id="searchInput" placeholder="E.g., WordPress, Shopify, React">
+
+                    <label for="industryFilter">Select Industry:</label>
+                    <select id="industryFilter">
+                        <option value="">Select Industry</option>
+                        <option value="ecommerce">E-commerce</option>
+                        <option value="saas">SaaS</option>
+                        <option value="blog">Blog</option>
+                    </select>
+
+                    <label for="trafficFilter">Select Traffic Range:</label>
+                    <select id="trafficFilter">
+                        <option value="">Select Traffic Range</option>
+                        <option value="low">&lt;10k</option>
+                        <option value="medium">10k-50k</option>
+                        <option value="high">&gt;50k</option>
+                    </select>
+
+                    <button type="button" class="analyze-btn" onclick="generateLeads()">Generate Leads</button>
+                </form>
+
+                <div id="resultContainer" class="result-container">
+                    <!-- Results will appear here -->
+                </div>
+            </section>
+        </main>
     </div>
 
-    <div class="filter-section">
-      <select id="industry-filter">
-        <option value="">Select Industry</option>
-        <option value="ecommerce">E-commerce</option>
-        <option value="saas">SaaS</option>
-        <option value="blog">Blog</option>
-      </select>
-      <select id="traffic-filter">
-        <option value="">Select Traffic Range</option>
-        <option value="low">&lt;10k</option>
-        <option value="medium">10k-50k</option>
-        <option value="high">&gt;50k</option>
-      </select>
-      <select id="region-filter">
-        <option value="">Select Region</option>
-        <option value="global">Global</option>
-        <option value="us">United States</option>
-        <option value="eu">Europe</option>
-      </select>
-    </div>
+    <script>
+        function generateLeads() {
+            const tech = document.getElementById("searchInput").value;
+            const industry = document.getElementById("industryFilter").value;
+            const traffic = document.getElementById("trafficFilter").value;
 
-    <div class="results-section">
-      <table id="results-table">
-        <thead>
-          <tr>
-            <th>Website URL</th>
-            <th>Technology Stack</th>
-            <th>Industry</th>
-            <th>Estimated Traffic</th>
-            <th>Contact Info</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Results will populate here -->
-        </tbody>
-      </table>
-    </div>
+            if (!tech) {
+                alert("Please enter a technology to search.");
+                return;
+            }
 
-    <div class="export-section">
-      <button id="export-csv">Export to CSV</button>
-      <button id="export-pdf">Export to PDF</button>
-      <button id="export-json">Export to JSON</button>
-    </div>
+            document.getElementById("resultContainer").innerHTML = "<p>Generating leads... Please wait.</p>";
 
-    <footer class="footer">
-      <p>Need help? <a href="#">Visit our FAQ</a> or <a href="#">contact support</a>.</p>
-    </footer>
-  </div>
-
-  <script src="/js/script.js"></script>
+            // Simulate result for demo
+            setTimeout(() => {
+                const result = `
+                    <h3>Lead Results</h3>
+                    <ul>
+                        <li>Website 1: Tech - ${tech}, Industry - ${industry}, Traffic - ${traffic}</li>
+                        <li>Website 2: Tech - ${tech}, Industry - ${industry}, Traffic - ${traffic}</li>
+                        <li>Website 3: Tech - ${tech}, Industry - ${industry}, Traffic - ${traffic}</li>
+                    </ul>
+                `;
+                document.getElementById("resultContainer").innerHTML = result;
+            }, 2000);
+        }
+    </script>
 </body>
 </html>

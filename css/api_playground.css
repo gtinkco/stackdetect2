@@ -1,0 +1,137 @@
+/* API Playground Styles */
+.tool-section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Max width for the tool section */
+    width: 90%; /* Ensure it is responsive */
+}
+
+.tool-section h2 {
+    font-size: 24px;
+    color: #00eaff;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.api-playground {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centers the content */
+}
+
+.request-builder, .response-viewer {
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 8px;
+    width: 48%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.request-builder label {
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+    margin: 10px 0 5px;
+}
+
+.request-builder select, .request-builder input, .request-builder textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444444;
+    background-color: #333333;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.request-builder button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00eaff;
+    color: #121212;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.request-builder button:hover {
+    background-color: #00c0d1;
+}
+
+.response-viewer h3 {
+    font-size: 18px;
+    color: #00eaff;
+    margin-bottom: 10px;
+}
+
+.response-viewer pre {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.additional-tools {
+    margin-top: 30px;
+}
+
+.additional-tools h3 {
+    font-size: 18px;
+    color: #00eaff;
+    margin-bottom: 10px;
+}
+
+#code-snippet {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#copy-snippet-btn {
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #00eaff;
+    color: #121212;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#copy-snippet-btn:hover {
+    background-color: #00c0d1;
+}
+
+#request-history {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#request-history li {
+    background-color: #121212;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 14px;
+}

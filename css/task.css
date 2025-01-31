@@ -1,0 +1,76 @@
+/* Add Task Form Styling */
+.add-task-form {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background-color: #1e1e1e; /* Matches dark theme */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 234, 255, 0.2); /* Neon glow */
+    align-items: center;
+}
+
+.add-task-form input, .add-task-form select {
+    flex: 1; /* Ensures even spacing */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #121212; /* Dark background for input */
+    color: #fff; /* White text for readability */
+    font-size: 14px;
+}
+
+.add-task-form input::placeholder {
+    color: #888; /* Subtle placeholder color */
+}
+
+.add-task-form select {
+    appearance: none; /* Removes default dropdown arrow for custom styling */
+}
+
+.add-task-form button {
+    padding: 10px 15px;
+    background-color: #00eaff;
+    color: #121212;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 234, 255, 0.2); /* Neon glow */
+    transition: all 0.3s ease;
+}
+
+.add-task-form button:hover {
+    background-color: #00b4cc; /* Slightly darker blue for hover */
+    box-shadow: 0 4px 12px rgba(0, 234, 255, 0.4);
+}
+
+/* Task List Items */
+.task-items {
+    list-style: none;
+    padding: 0;
+}
+
+.task-items li {
+    margin-bottom: 20px;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 234, 255, 0.2);
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.pending {
+    color: orange;
+}
+
+.status.completed {
+    color: green;
+}
+
+.status.in-progress {
+    color: blue;
+}

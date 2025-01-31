@@ -1,138 +1,52 @@
-/* styles.css */
-body {
-  font-family: 'Exo', sans-serif;
-  background-color: #121212;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  background-color: #1a2b3c;
+  color: #f4f4f9;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   padding: 20px;
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 20px;
+.sidebar .logo {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
 }
 
-.header h1 {
-  font-size: 2rem;
-  color: #00eaff;
+.sidebar-nav ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.header p {
-  font-size: 1rem;
-  color: #bbb;
+.sidebar-nav li {
+  margin: 20px 0;
 }
 
-.search-section {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.search-section input {
-  width: 60%;
-  padding: 10px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-}
-
-.search-section button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #00eaff;
-  color: #121212;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.search-section button:hover {
-  background-color: #009fcc;
-}
-
-.filter-section {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.filter-section select {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.results-section {
-  margin-top: 20px;
-}
-
-.results-section table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.results-section th, td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #333;
-}
-
-.results-section th {
-  background-color: #1e1e1e;
-}
-
-.results-section tbody tr:hover {
-  background-color: #2c2c2c;
-}
-
-.export-section {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.export-section button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.export-section #export-csv {
-  background-color: #00eaff;
-}
-
-.export-section #export-pdf {
-  background-color: #28a745;
-}
-
-.export-section #export-json {
-  background-color: #ffa500;
-}
-
-.footer {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.9rem;
-}
-
-.footer a {
-  color: #00eaff;
+.sidebar-nav a {
+  color: #00FFF7;
   text-decoration: none;
+  font-weight: 600;
 }
 
-.footer a:hover {
-  text-decoration: underline;
+.sidebar-nav a:hover, .sidebar-nav a.active {
+  color: #FF6F61;
+}
+
+/* Main content */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 100%;
+      position: relative;
+  }
+  
+  .main-content {
+      margin-left: 0;
+  }
 }

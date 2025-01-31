@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Playground - StackDetect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/techstack.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/api_playground.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="back-button" onclick="window.location.href='/tools'">🔙 Back to Tools</button>
+            <h2>API Tools</h2>
+            <ul class="menu">
+                <li><a href="/api"><span class="icon">🛠️</span> API Analyzer</a></li>
+                <li><a href="/api_auth_manager"><span class="icon">🚀</span> API Authentication Manager</a></li>
+                <li><a href="/api_playground" class="active"><span class="icon">🖥️</span> API Playground</a></li>
+                <li><a href="/something"><span class="icon">📘</span> Interactive API Documentation</a></li>
+                <li><a href="/dependencies"><span class="icon">📑</span> Dynamic Examples</a></li>
+                <li><a href="/compatibility"><span class="icon">🔄</span> API Health Status</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>API Playground</h1>
+                <p>Test and explore API endpoints interactively.</p>
+            </header>
+
+            <!-- API Playground Section -->
+            <section class="tool-section">
+                <h2>Build and Send Requests</h2>
+    
+                <div class="api-playground">
+                    <!-- Request Builder -->
+                    <div class="request-builder">
+                        <label for="http-method">HTTP Method:</label>
+                        <select id="http-method">
+                            <option value="GET">GET</option>
+                            <option value="POST">POST</option>
+                            <option value="PUT">PUT</option>
+                            <option value="DELETE">DELETE</option>
+                        </select>
+    
+                        <label for="endpoint">Endpoint:</label>
+                        <input type="text" id="endpoint" placeholder="/api/example">
+    
+                        <label for="headers">Headers:</label>
+                        <textarea id="headers" placeholder='{"Authorization": "Bearer <token>"}'></textarea>
+    
+                        <label for="body">Body (JSON):</label>
+                        <textarea id="body" placeholder='{"key": "value"}'></textarea>
+    
+                        <button id="send-request-btn">Send Request</button>
+                    </div>
+    
+                    <!-- Response Viewer -->
+                    <div class="response-viewer">
+                        <h3>Response</h3>
+                        <pre id="response-output">{ "response": "Your response will appear here." }</pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+        <!-- JavaScript to Handle API Requests -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const sendRequestBtn = document.getElementById('send-request-btn');
+                const responseOutput = document.getElementById('response-output');
+                const httpMethod = document.getElementById('http-method');
+                const endpoint = document.getElementById('endpoint');
+                const headers = document.getElementById('headers');
+                const body = document.getElementById('body');
+    
+                sendRequestBtn.addEventListener('click', async () => {
+                    const method = httpMethod.value;
+                    const url = endpoint.value;
+                    const headersInput = headers.value ? JSON.parse(headers.value) : {};
+                    const bodyInput = body.value ? JSON.parse(body.value) : null;
+    
+                    try {
+                        const options = {
+                            method,
+                            headers: headersInput,
+                            body: method !== 'GET' ? JSON.stringify(bodyInput) : undefined,
+                        };
+    
+                        const response = await fetch(url, options);
+                        const data = await response.json();
+                        responseOutput.textContent = JSON.stringify(data, null, 2);
+                    } catch (error) {
+                        responseOutput.textContent = `Error: ${error.message}`;
+                    }
+                });
+            });
+        </script>
+    
+</body>
+
+</html>

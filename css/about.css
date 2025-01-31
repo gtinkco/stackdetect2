@@ -61,7 +61,7 @@
 .cta-section .cta-button {
     padding: 10px 20px;
     font-size: 1em;
-    background-color: #f1f1f1;
+    background-color: #ff6f61;
     border: none;
     color: #121212;
     cursor: pointer;
@@ -71,6 +71,14 @@
 
 .cta-section .cta-button:hover {
     background-color: #c2c2c2;
+}
+
+
+footer {
+    background-color: #121212;
+    color: #f4f4f9;
+    padding: 20px 0;
+    text-align: center;
 }
 
 /* Scroll Buttons */

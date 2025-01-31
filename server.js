@@ -105,11 +105,15 @@ app.post('/register', async (req, res) => {
     res.status(200).json({ message: 'User registered successfully', redirectUrl: '/login.html' });
   } catch (err) {
     console.error('Error during registration:', err);
-    res.status(500).json({ message: '	Server error' });
+    res.status(500).json({ message: 'Server error' });
   }
 });
+// Serve Login Page (GET Route)
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'login.html'));  // Make sure your login.html exists in the 'views' folder
+});
 
-// Login Route
+// Login Route (POST Route)
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -142,16 +146,26 @@ app.post('/login', async (req, res) => {
 // Middleware to check subscription
 function checkSubscription(req, res, next) {
   const token = req.cookies['authToken'];
-  if (!token) return res.status(401).send('Access Denied: No Token Provided!');
+  if (!token) {
+    return res.redirect('/login');  // Redirect if no token is provided
+  }
 
   try {
     const verified = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = verified;
-    next();
+    req.user = verified;  // Attach the decoded token payload to the request
+    next();  // Proceed to the next middleware or route handler
   } catch (err) {
-    res.status(400).send('Invalid Token');
+    console.error('JWT verification failed:', err.message);  // Log the error for debugging
+    return res.redirect('/login');  // Redirect on invalid or expired token
   }
 }
+
+
+// Route for Task Manager
+app.get('/task', checkSubscription, (req, res) => {
+  const { username, plan } = req.user;  // Get both username and plan from the user data
+  res.render('task', { username, plan });  // Pass both username and plan to the task.ejs template
+});
 
 // Serve trending technologies EJS page
 app.get('/trendingtechnologies', (req, res) => {
@@ -162,6 +176,47 @@ app.get('/trendingtechnologies', (req, res) => {
 app.get('/dashboard', checkSubscription, (req, res) => {
   const { username, plan } = req.user;
   res.render('dashboard', { username, plan });
+});
+
+// Route for Tools
+app.get('/tools', checkSubscription, (req, res) => {
+  const { username, plan } = req.user;  // Get both username and plan from the user data
+  res.render('tools', { username, plan });  // Pass both username and plan to the tools.ejs template
+});
+
+// Route for API Authentication Manager
+app.get('/api_auth_manager', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'api_auth_manager.html')); // Corrected file name and path
+});
+
+// Route for API Playground
+app.get('/api_playground', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'api_playground.html')); // Adjust the file path as needed
+});
+
+// Route for Code Base Insights
+app.get('/code-base-insight', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'code-base-insight.html'));
+});
+
+// Route for Code Base Insights
+app.get('/tech-compatibility', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'tech-compatibility.html'));
+});
+
+
+// Route for Code Snippets
+app.get('/code-snippets', checkSubscription, (req, res) => {
+  const { username, plan } = req.user;  // Get both username and plan from the user data
+  res.render('code-snippets', { username, plan });  // Pass both username and plan to the code-snippets.ejs template
+});
+
+// Example of a route to handle the addition of new snippets (POST request)
+app.post('/add-snippet', (req, res) => {
+  // Logic to save the snippet to the database or file system
+  const { title, code, category, tags } = req.body;
+  // Save to the database...
+  res.redirect('/codesnippet');  // Redirect back to the Code Snippets page
 });
 
 // Start the server
