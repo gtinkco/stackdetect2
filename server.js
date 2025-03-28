@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use(express.static(path.join(__dirname, 'views')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // Set EJS as the view engine
 app.set('view engine', 'ejs');

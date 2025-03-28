@@ -29,7 +29,8 @@
     "jsonwebtoken": "^9.0.2",
     "jwt-simple": "^0.5.6",
     "mongodb": "^6.13.0",
-    "mongoose": "^8.9.1"
+    "mongoose": "^8.9.1",
+    "vercel": "^41.4.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

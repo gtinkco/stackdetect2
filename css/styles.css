@@ -5,6 +5,7 @@ body {
     color: #f4f4f9;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevents horizontal overflow */
 }
 
 /* Navigation Bar */
@@ -17,7 +18,11 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
+    width: 100%; /* Ensure navbar does not overflow */
+    box-sizing: border-box;
 }
 
 .navbar a {
@@ -43,6 +48,15 @@ body {
     align-items: center;
 }
 
+/* Active state for the navigation link */
+.navbar a.active {
+    color: #FF6F61; /*  text when active */
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
 .cta-button-small {
     background-color: #FF6F61;
     color: #121212;
@@ -58,7 +72,7 @@ body {
     background-color: #00FFF7;
 }
 
-/* Responsive Design for Navbar */
+/* Responsive Design for Navbar (Optional) */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -144,8 +158,29 @@ h1, h2, h3 {
 .feature-card:hover {
     transform: translateY(0);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
-    background-color: #00FFF7;
+    background-color: #5c7583;
 }
+
+/* Responsive Design for Cards */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column; /* Stack the cards vertically on small screens */
+        align-items: center; /* Center the cards */
+    }
+
+    .feature-card {
+        width: 80%; /* Set cards to take up 80% of the width on small screens */
+        margin: 10px 0; /* Reduce margin between the cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-card {
+        width: 90%; /* Set cards to take up 90% of the width on very small screens */
+        margin: 5px 0; /* Reduce margin further */
+    }
+}
+
 
 .pricing {
     text-align: center;

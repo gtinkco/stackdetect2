@@ -71,6 +71,7 @@
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+   
 }
 
 .analyze-btn {
@@ -117,7 +118,7 @@
     border-radius: 5px;
     margin-right: 10px;
     color: #121212;
-    background-color: #1e1e1e;
+    background-color: #ffffff;
     width: 50%;
 }
 

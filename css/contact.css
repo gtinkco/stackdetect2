@@ -92,19 +92,6 @@
     margin-bottom: 20px;
 }
 
-.cta-button {
-    background-color: #00eaff; /* Neon blue button */
-    border: none;
-    padding: 15px 25px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 5px;
-    color: #121212;
-}
-
-.cta-button:hover {
-    background-color: #008c99; /* Darker neon hover effect */
-}
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
