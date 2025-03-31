@@ -1,0 +1,255 @@
+/* General Layout */
+body {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #121212;
+    color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal overflow */
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a2b3c;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%; /* Ensure navbar does not overflow */
+    box-sizing: border-box;
+}
+
+.navbar a {
+    color: #00FFF7;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #FF6F61;
+}
+
+.navbar .logo {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.5rem;
+    color: #00FFF7;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+/* Active state for the navigation link */
+.navbar a.active {
+    color: #FF6F61; /*  text when active */
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.cta-button-small {
+    background-color: #FF6F61;
+    color: #121212;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button-small:hover {
+    background-color: #00FFF7;
+}
+
+/* Responsive Design for Navbar (Optional) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar a {
+        margin: 5px 0;
+    }
+}
+
+header {
+    background-color: #1a2b3c;
+    color: #f4f4f9;
+    padding: 20px;
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #FF6F61;
+    color: #121212;
+    padding: 18px 36px;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: all 0.3s ease-out;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #00FFF7;
+    color: #121212;
+    transform: translateY(-4px);
+}
+
+h1, h2, h3 {
+    color: #00FFF7;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.hero {
+    background: linear-gradient(120deg, #121212, #1a2b3c);
+    padding: 100px 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+}
+
+.feature-card {
+    background-color: #2e3b42;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(10px);
+    transition: all 0.3s ease-in-out;
+    margin: 20px;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(0);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+    background-color: #5c7583;
+}
+
+/* Responsive Design for Cards */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column; /* Stack the cards vertically on small screens */
+        align-items: center; /* Center the cards */
+    }
+
+    .feature-card {
+        width: 80%; /* Set cards to take up 80% of the width on small screens */
+        margin: 10px 0; /* Reduce margin between the cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-card {
+        width: 90%; /* Set cards to take up 90% of the width on very small screens */
+        margin: 5px 0; /* Reduce margin further */
+    }
+}
+
+
+.pricing {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #1a2b3c;
+    color: #f4f4f9;
+    margin-top: 40px;
+}
+
+.pricing h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.pricing p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.pricing-button {
+    background-color: #FF6F61;
+    color: #121212;
+    padding: 18px 36px;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: all 0.3s ease-out;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.pricing-button:hover {
+    background-color: #00FFF7;
+    color: #121212;
+    transform: translateY(-4px);
+}
+
+footer {
+    background-color: #121212;
+    color: #f4f4f9;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Scroll Buttons */
+.scroll-to-bottom, .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF6F61;
+    color: #121212;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    display: none; /* Initially hidden */
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 24px; /* Center the arrow vertically */
+}
+
+.scroll-to-bottom:hover, .scroll-to-top:hover {
+    background-color: #00FFF7;
+    transform: translateY(-4px);
+}
+
+/* Scroll to Top button visibility */
+.show-scroll-to-top {
+    display: block;
+}

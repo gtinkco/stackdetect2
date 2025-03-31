@@ -1,0 +1,102 @@
+
+
+/* Tools Section */
+.tools-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.tool-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.tool-button {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+}
+
+.tool-button button {
+    background-color: #00eaff;
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.tool-button button:hover {
+    background-color: #00aacc;
+}
+
+.tool-button p {
+    font-size: 1rem;
+    color: #eaeaea;
+    margin-top: 10px;
+}
+
+
+/* Recent Tools Section Styling */
+.recent-tools {
+    margin-top: 30px;
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.recent-tools h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #00eaff;
+    text-align: center;
+}
+
+.recent-tools-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.recent-tools-list li {
+    font-size: 16px;
+    color: #00eaff;
+    padding: 10px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.recent-tools-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 234, 255, 0.5);
+}
+
+.recent-tools-list li a {
+    text-decoration: none;
+    color: #00eaff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.recent-tools-list li a:hover {
+    color: #008c99;
+}

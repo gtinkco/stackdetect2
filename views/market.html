@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Analyzer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/market.css">
+    <link rel="stylesheet" href="/css/techstack.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    
+   
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="back-button" onclick="window.location.href='/tools'">🔙 Back to Tools</button>
+            <h2>Marketplace Tools</h2>
+            <ul class="menu">
+                <li><a href="/marketplace-analyzer" class="active"><span class="icon">📈</span> Marketplace Analyzer</a></li>
+                <li><a href="#"><span class="icon">📊</span> #RESOURCE 2##</a></li>
+                <li><a href="#"><span class="icon">🛠️</span> #RESOURCE 3 ##</a></li>
+                <li><a href="#"><span class="icon">🔍</span> #RESOURCE 4##</a></li>
+                <li><a href="#"><span class="icon">🌐</span> #RESOURCE 5 #</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Marketplace Analyzer</h1>
+                <p>Analyze and optimize your marketplace strategy with powerful insights and tools.</p>
+            </header>
+
+            <!-- Tool Section -->
+            <section class="tool-section">
+                <h2>Analyze Marketplace Performance</h2>
+                <form id="marketplaceForm">
+                    <label for="marketplace">Select a Marketplace:</label>
+                    <select id="marketplace">
+                        <option value="E-commerce">E-commerce</option>
+                        <option value="SaaS">SaaS</option>
+                        <option value="AI/ML">AI/ML</option>
+                        <option value="App Stores">App Stores</option>
+                        <option value="Gaming">Gaming</option>
+                    </select>
+
+                    <label for="currentMetrics">Your Current Metrics:</label>
+                    <textarea id="currentMetrics" placeholder="E.g., Monthly Revenue: $10,000; Active Users: 500"></textarea>
+
+                    <label for="goals">Your Goals:</label>
+                    <textarea id="goals" placeholder="E.g., Increase revenue by 20%, Reach 1000 active users"></textarea>
+
+                    <button type="button" class="analyze-btn" onclick="analyzeMarketplace()">Run Analysis</button>
+                </form>
+
+                <div id="resultContainer" class="result-container">
+                    <!-- Results will appear here -->
+                </div>
+            </section>
+
+            <!-- Key Focus Areas -->
+            <section class="focus-areas">
+                <h2>Key Focus Areas</h2>
+                <div class="focus-grid">
+                    <div class="focus-item">
+                        <h3>Market Trends</h3>
+                        <p>Identify emerging trends and opportunities specific to your marketplace.</p>
+                    </div>
+                    <div class="focus-item">
+                        <h3>Competitive Analysis</h3>
+                        <p>Evaluate your competitors' strategies and market positioning.</p>
+                    </div>
+                    <div class="focus-item">
+                        <h3>User Engagement</h3>
+                        <p>Analyze user activity and retention metrics to improve engagement.</p>
+                    </div>
+                    <div class="focus-item">
+                        <h3>Revenue Insights</h3>
+                        <p>Track your revenue streams and optimize for growth and profitability.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function analyzeMarketplace() {
+            const marketplace = document.getElementById("marketplace").value;
+            const metrics = document.getElementById("currentMetrics").value;
+            const goals = document.getElementById("goals").value;
+
+            if (!marketplace || !metrics || !goals) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            document.getElementById("resultContainer").innerHTML = "<p>Running analysis... Please wait.</p>";
+
+            // Simulate result for demo
+            setTimeout(() => {
+                const result = `
+                    <h3>Analysis Results for ${marketplace}</h3>
+                    <ul>
+                        <li>Growth Potential: High ✅</li>
+                        <li>Competitor Benchmarking: Requires Improvement ⚠️</li>
+                        <li>User Retention: Moderate ❌</li>
+                    </ul>
+                `;
+                document.getElementById("resultContainer").innerHTML = result;
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>
+a

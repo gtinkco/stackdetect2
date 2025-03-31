@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Compatibility Checker</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+   
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="back-button" onclick="window.location.href='/tools'">🔙 Back to Tools</button>
+            <h2>StackDetect Tools</h2>
+            <ul class="menu">
+                <li><a href="/techstack"><span class="icon">🖥️</span> Tech Stack Analyzer</a></li>
+                <li><a href="/api"><span class="icon">📘</span> Dependency Visualizer</a></li>
+                <li class="active"><a href="/compatibility"><span class="icon">🔄</span> Tech Compatibility Checker</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Tech Compatibility Checker</h1>
+                <p>Evaluate how well your tech stack integrates with other tools.</p>
+            </header>
+
+            <!-- Tool Section -->
+            <section class="tool-section">
+                <h2>Check Compatibility</h2>
+                <form id="compatibilityForm">
+                    <label for="currentStack">Your Current Tech Stack:</label>
+                    <textarea id="currentStack" placeholder="E.g., React, Node.js, MongoDB, AWS"></textarea>
+
+                    <label for="targetTools">Tools/Services to Integrate:</label>
+                    <textarea id="targetTools" placeholder="E.g., Stripe, Google Analytics"></textarea>
+
+                    <button type="button" class="analyze-btn" onclick="checkCompatibility()">Check Compatibility</button>
+                </form>
+
+                <div id="resultContainer" class="result-container">
+                    <!-- Results will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function checkCompatibility() {
+            const stack = document.getElementById("currentStack").value;
+            const tools = document.getElementById("targetTools").value;
+
+            if (!stack || !tools) {
+                alert("Please fill in both fields.");
+                return;
+            }
+
+            document.getElementById("resultContainer").innerHTML = "<p>Checking compatibility... Please wait.</p>";
+
+            // Simulate result for demo
+            setTimeout(() => {
+                const result = `
+                    <h3>Compatibility Results</h3>
+                    <ul>
+                        <li>Stripe: Supported ✅</li>
+                        <li>Google Analytics: Requires Configuration ⚠️</li>
+                        <li>SomeTool: Not Supported ❌</li>
+                    </ul>
+                `;
+                document.getElementById("resultContainer").innerHTML = result;
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

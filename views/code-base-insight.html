@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Base Insights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/techstack.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/codebase.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="back-button" onclick="window.location.href='/tools'">🔙 Back to Tools</button>
+            <h2>StackDetect Tools</h2>
+            <ul class="menu">
+                <li><a href="/techstack"><span class="icon">🖥️</span> Tech Stack Analyzer</a></li>
+                <li class="active"><a href="/code-base-insight"><span class="icon">🚀</span>Code Base Insights</a></li>
+                <li><a href="/api"><span class="icon">📘</span>###</a></li>
+                <li><a href="/tech-compatibility"><span class="icon">🔄</span>###</a></li>
+                <li><a href="#"><span class="icon">📊</span> ###</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Code Base Insights</h1>
+                <p>Analyze your codebase for potential improvements and optimizations.</p>
+            </header>
+
+            <!-- Tool Section -->
+            <section class="tool-section">
+                <h2>Analyze Your Code Base</h2>
+                <form id="codeBaseForm">
+                    <label for="repoURL">Repository URL:</label>
+                    <input type="url" id="repoURL" placeholder="Enter your repository URL (e.g., GitHub, GitLab)">
+
+                    <label for="analysisOptions">Analysis Options:</label>
+                    <select id="analysisOptions">
+                        <option value="code-quality">Code Quality</option>
+                        <option value="dependency-health">Dependency Health</option>
+                        <option value="vulnerability-scan">Vulnerability Scan</option>
+                        <option value="complexity-analysis">Complexity Analysis</option>
+                    </select>
+
+                    <button type="button" class="analyze-btn" onclick="analyzeCodeBase()">Run Analysis</button>
+                </form>
+
+                <div id="insightResults" class="result-container">
+                    <!-- Results will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function analyzeCodeBase() {
+            const repoURL = document.getElementById("repoURL").value;
+            const analysisOption = document.getElementById("analysisOptions").value;
+
+            if (!repoURL) {
+                alert("Please enter a repository URL.");
+                return;
+            }
+
+            document.getElementById("insightResults").innerHTML = "<p>Analyzing codebase... Please wait.</p>";
+
+            // Simulate result for demo
+            setTimeout(() => {
+                let result;
+                switch (analysisOption) {
+                    case "code-quality":
+                        result = `
+                            <h3>Code Quality Insights</h3>
+                            <ul>
+                                <li>Code coverage: 85% ✅</li>
+                                <li>Linting issues: 5 ⚠️</li>
+                                <li>Redundant code blocks detected: 2 ❌</li>
+                            </ul>`;
+                        break;
+                    case "dependency-health":
+                        result = `
+                            <h3>Dependency Health Insights</h3>
+                            <ul>
+                                <li>Outdated dependencies: 3 ⚠️</li>
+                                <li>Critical updates needed: 1 ❌</li>
+                                <li>All others: Up-to-date ✅</li>
+                            </ul>`;
+                        break;
+                    case "vulnerability-scan":
+                        result = `
+                            <h3>Vulnerability Scan Insights</h3>
+                            <ul>
+                                <li>Critical vulnerabilities: 0 ✅</li>
+                                <li>Medium vulnerabilities: 2 ⚠️</li>
+                                <li>Low vulnerabilities: 8 ❌</li>
+                            </ul>`;
+                        break;
+                    case "complexity-analysis":
+                        result = `
+                            <h3>Complexity Analysis Insights</h3>
+                            <ul>
+                                <li>Files with high complexity: 3 ⚠️</li>
+                                <li>Functions exceeding recommended size: 5 ❌</li>
+                                <li>Overall maintainability: Good ✅</li>
+                            </ul>`;
+                        break;
+                    default:
+                        result = "<p>No insights available.</p>";
+                }
+                document.getElementById("insightResults").innerHTML = result;
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

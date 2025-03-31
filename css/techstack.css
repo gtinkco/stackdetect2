@@ -1,0 +1,165 @@
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #121212;
+    color: #fff;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h2 {
+    color: #00eaff;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu li {
+    margin-bottom: 15px;
+}
+
+.sidebar .menu li a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar .menu li a:hover,
+.sidebar .menu li.active a {
+    color: #00eaff;
+    font-weight: bold;
+}
+
+.back-button {
+    display: inline-block;
+    background: #00eaff;
+    color: #000;
+    border: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.tool-section {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+   
+}
+
+.analyze-btn {
+    background-color: #00eaff;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.result-container {
+    margin-top: 20px;
+    background-color: #121212;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Tool Section */
+.tool-section {
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.tool-section h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.input-container input {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: #121212;
+    background-color: #ffffff;
+    width: 50%;
+}
+
+.input-container button {
+    background-color: #00eaff;
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.input-container button:hover {
+    background-color: #00aacc;
+}
+
+.result-container {
+    margin-top: 30px;
+}
+
+.result-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.result-container li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.result-container h3 {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    color: #eaeaea;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}

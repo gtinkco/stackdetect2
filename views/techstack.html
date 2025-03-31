@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Stack Breakdown - StackDetect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+    <link rel="stylesheet" href="/css/techstack.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="back-button" onclick="window.location.href='/tools'">🔙 Back to Tools</button>
+            <h2>Tech Stack Tools</h2>
+            <ul class="menu">
+                <li class="active"><a href="/techstack"><span class="icon">🖥️</span>Tech Stack Breakdown</a></li>
+                <li><a href="/code-base-insight"><span class="icon">🚀</span>Code Base Insights</a></li>
+                <li><a href="/api"><span class="icon">📘</span> ###</a></li>
+                <li><a href="/dependencies"><span class="icon">🔗</span> ###</a></li>
+                <li><a href="/compatibility"><span class="icon">🔄</span> ###</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Tech Stack Breakdown</h1>
+                <p>Analyze the technologies used by any website. Enter the URL below to get started.</p>
+            </header>
+
+            <!-- Tech Stack Analyzer Tool -->
+            <section class="tool-section">
+                <h2>Analyze Website Tech Stack </h2>
+                <div class="input-container">
+                    <input type="text" id="urlInput" placeholder="Enter website URL (e.g., https://www.example.com)">
+                    <button class="analyze-btn" onclick="analyzeTechStack()">Analyze</button>
+                </div>
+                <div id="resultContainer" class="result-container">
+                    <!-- Results will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    
+
+    <script>
+        function analyzeTechStack() {
+            var url = document.getElementById("urlInput").value;
+            if (!url) {
+                alert("Please enter a valid URL.");
+                return;
+            }
+            document.getElementById("resultContainer").innerHTML = "<p>Analyzing... Please wait...</p>";
+
+            // Simulate a result for demo purposes
+            setTimeout(function() {
+                var result = `
+                    <h3>Tech Stack Used by ${url}</h3>
+                    <ul>
+                        <li><strong>Front-End Framework:</strong> React</li>
+                        <li><strong>Back-End Framework:</strong> Node.js</li>
+                        <li><strong>Database:</strong> MongoDB</li>
+                        <li><strong>Hosting:</strong> AWS</li>
+                        <li><strong>Analytics:</strong> Google Analytics</li>
+                    </ul>
+                `;
+                document.getElementById("resultContainer").innerHTML = result;
+            }, 2000); // Simulated delay
+        }
+    </script>
+</body>
+
+</html>

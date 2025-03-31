@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="/css/dashboard.css"> <!-- Dashboard Styles -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- General Styles -->
+    <link rel="stylesheet" href="/css/task.css"> <!-- Task Page Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-summary">
+                <i class="profile-icon fas fa-user-circle"></i> <!-- Font Awesome Icon -->
+                <h3><%= username %></h3>
+                <p>Plan: <%= plan %></p>
+            </div>
+            <ul class="menu">
+                
+                <li><a href="/dashboard"><span class="icon">🏠</span> Dashboard</a></li>
+                <li><a href="/tools"><span class="icon">🛠️</span> Tools</a></li>
+                <li><a href="/code-snippets" ><span class="icon">💾</span> Code Snippet</a></li>
+                <li><a href="/task" class="active"><span class="icon">📋</span> Tasks</a></li>
+                <li><a href="/notifications"><span class="icon">🔔</span> ### </a></li>
+                <li><a href="/trendingtechnologies"><span class="icon">🚀</span> Trending Technologies</a></li>
+                <li><a href="/techstack"><span class="icon">🖥️</span> Tech Stack</a></li>
+                <li><a href="/api"><span class="icon">📘</span> API Tracker</a></li>
+                <li><a href="/"><span class="icon">🔓</span> Log Out</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="tasks-header">
+                <h1>Tasks</h1>
+            </header>
+
+            <!-- Add Task Form -->
+            <section class="add-task-form">
+                <input id="taskTitle" type="text" placeholder="Task Title">
+                <input id="taskDescription" type="text" placeholder="Task Description">
+                <select id="taskStatus">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+                <button id="addTaskBtn">Add Task</button>
+            </section>
+
+            <!-- Tasks Section -->
+            <section class="tasks-list">
+                <h2>Your Tasks</h2>
+                <ul class="task-items" id="taskList">
+                    <!-- Tasks will be dynamically inserted here -->
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="/js/task.js"></script>
+
+</body>
+</html>

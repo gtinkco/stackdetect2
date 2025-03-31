@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - StackDetect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/techstack.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/styles.css">
+  
+
+    
+
+
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="back-button" onclick="window.location.href='/tools'">🔙 Back to Tools</button>
+            <h2>API Tools</h2>
+            <ul class="menu">
+                <li><a href="/api" class="active"><span class="icon">🛠️</span> API Analyzer</a></li>
+                <li><a href="/api_auth_manager"><span class="icon">🚀</span> API Authentication Manager</a></li>
+                <li><a href="/api_playground"><span class="icon">🖥️</span> API Playground</a></li>
+                <li><a href="/something"><span class="icon">📘</span>In##ion</a></li>
+                <li><a href="/dependencies"><span class="icon">📑</span>###s</a></li>
+                <li><a href="/compatibility"><span class="icon">🔄</span> ###s</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>API Documentation</h1>
+                <p>Get details on how to use our API to interact with StackDetect tools.</p>
+            </header>
+
+            <!-- API Documentation Section -->
+            <section class="tool-section">
+                <h2>API Endpoints</h2>
+                <p>Below are the API endpoints you can use to access the features of StackDetect:</p>
+                
+                <div class="api-endpoint">
+                    <h3>GET /techstack</h3>
+                    <p>Retrieve the tech stack of a website. You need to provide the website URL as a parameter.</p>
+                    <pre>GET /techstack?url=https://www.example.com</pre>
+                    <p><strong>Response:</strong></p>
+                    <pre>
+{
+    "front_end_framework": "React",
+    "back_end_framework": "Node.js",
+    "database": "MongoDB",
+    "hosting": "AWS",
+    "analytics": "Google Analytics"
+}
+                    </pre>
+                </div>
+
+                <div class="api-endpoint">
+                    <h3>GET /dependencies</h3>
+                    <p>Get the list of dependencies for a particular project or website.</p>
+                    <pre>GET /dependencies?project=example-project</pre>
+                    <p><strong>Response:</strong></p>
+                    <pre>
+{
+    "dependencies": [
+        "React",
+        "Axios",
+        "Node.js",
+        "Express"
+    ]
+}
+                    </pre>
+                </div>
+
+                <div class="api-endpoint">
+                    <h3>POST /analyze</h3>
+                    <p>Submit a URL to analyze the tech stack and return the results.</p>
+                    <pre>POST /analyze</pre>
+                    <p><strong>Request Body:</strong></p>
+                    <pre>
+{
+    "url": "https://www.example.com"
+}
+                    </pre>
+                    <p><strong>Response:</strong></p>
+                    <pre>
+{
+    "status": "success",
+    "tech_stack": {
+        "front_end_framework": "React",
+        "back_end_framework": "Node.js",
+        "database": "MongoDB",
+        "hosting": "AWS",
+        "analytics": "Google Analytics"
+    }
+}
+                    </pre>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

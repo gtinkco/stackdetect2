@@ -1,0 +1,133 @@
+/* General Styles */
+h1, h2, h3 {
+    color: #00FFF7;
+    font-weight: 600;
+}
+
+header.pricing-header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header.pricing-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header.pricing-header p {
+    font-size: 1.2rem;
+    color: #f4f4f9;
+}
+/* Pricing Section */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    flex-wrap: wrap; /* Allows items to wrap on small screens */
+}
+
+.pricing-card {
+    background-color: #1a2b3c;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px; /* Adds space between cards when stacking */
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+}
+
+.pricing-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.feature-list li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    background-color: #FF6F61;
+    color: #121212;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: all 0.3s ease-out;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #00FFF7;
+    color: #121212;
+    transform: translateY(-4px);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Stack pricing cards vertically */
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        width: 90%; /* Make pricing cards take up most of the screen width */
+    }
+
+    .pricing-card h2 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .price {
+        font-size: 2rem; /* Smaller price font size for mobile */
+    }
+
+    .feature-list li {
+        font-size: 0.9rem; /* Smaller font size for mobile features */
+    }
+
+    .cta-button {
+        font-size: 16px; /* Smaller button text for mobile */
+        padding: 12px 24px; /* Adjust button padding */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjust for very small screens */
+    .pricing-card h2 {
+        font-size: 1.3rem; /* Even smaller font size for small devices */
+    }
+
+    .price {
+        font-size: 1.8rem; /* Smaller price font for smaller screens */
+    }
+
+    .feature-list li {
+        font-size: 0.85rem; /* Even smaller font size for very small devices */
+    }
+
+    .cta-button {
+        font-size: 14px; /* Even smaller button text */
+        padding: 10px 20px; /* Adjust button padding further */
+    }
+}

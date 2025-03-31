@@ -1,0 +1,85 @@
+/* Key Focus Areas */
+.focus-areas {
+    margin-top: 40px;
+    text-align: center; /* Centers the content */
+}
+
+.focus-areas h2 {
+    font-size: 1.8em;
+    color: #00eaff;
+    margin-bottom: 20px;
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center; /* Centers grid items */
+}
+
+.focus-item {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.focus-item h3 {
+    font-size: 1.2em;
+    color: #00eaff;
+    margin-bottom: 10px;
+}
+
+.focus-item p {
+    font-size: 1em;
+    color: #cccccc;
+}
+
+/* Analyze Marketplace Performance Form */
+form {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form label {
+    font-size: 1em;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    background-color: #121212;
+    color: #ffffff;
+    border: 1px solid #00eaff;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+form button {
+    background-color: #00eaff;
+    color: #121212;
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #008dbb;
+}

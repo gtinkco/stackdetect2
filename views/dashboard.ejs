@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css"> <!-- Include the general styles -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Include the general styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-summary">
+                <i class="profile-icon fas fa-user-circle"></i> <!-- Font Awesome Icon -->
+                <h3><%= username %></h3>
+                <p>Plan: <%= plan %></p>
+                
+            </div>
+            <ul class="menu">
+                <li><a href="/dashboard" class="active"><span class="icon">🏠</span> Dashboard</a></li>
+                <li><a href="/tools"><span class="icon">🛠️</span> Tools</a></li>
+                <li><a href="/code-snippets"><span class="icon">💾</span> Code Snippet</a></li>
+                <li><a href="/task"><span class="icon">📋</span> Tasks</a></li>
+                <li><a href="/notifications"><span class="icon">🔔</span> ###</a></li>
+                <li><a href="/trendingtechnologies"><span class="icon">🚀</span> Trending Technologies</a></li>
+                <li><a href="/techstack"><span class="icon">🖥️</span> Tech Stack</a></li>
+                <li><a href="/api"><span class="icon">📘</span> API Tracker</a></li>
+                <li><a href="/"><span class="icon">🔓</span> Log Out</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Welcome, <%= username %>!</h1>
+                <div class="account-info">
+                    <p>Subscription Plan: <%= plan %></p>
+                    <p>Last Login: Yesterday, 2:45 PM</p>
+                    <p>Storage Usage: 75%</p>
+                    <p>Next Billing Cycle: March 15, 2025</p>
+                </div>
+            </header>
+
+            <!-- Stats Section -->
+            <section class="dashboard-stats">
+                <div class="stat-card">
+                    <h3>Current Task</h3>
+                    <p>Pending: UI Redesign for Dashboard</p>
+                    <button class="btn btn-action">
+                   <a href="/task" class="btn">View Task</a>
+                </div>
+                <div class="stat-card">
+                    <h3>Upcoming Deadline</h3>
+                    <p>Project X - Final Review</p>
+                    <button class="btn btn-action">
+                   <a href="/task" class="btn">View Deadline</a>
+                </div>
+                <div class="stat-card">
+                    <h3>API Usage</h3>
+                    <p>Current Usage: 70% of your monthly limit</p>
+                   <button class="btn btn-action">
+                   <a href="/task" class="btn">View API Usage</a>
+                </div>
+                <div class="stat-card">
+                    <h3>Team Collab</h3>
+                    <p>New task assigned in Project Y</p>
+                   <button class="btn btn-action">
+                   <a href="/task" class="btn">Collab</a>
+                </div>
+            </section>
+
+            <!-- Recent Activity Feed -->
+            <section class="recent-activity-feed">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <span class="activity-time">2 hours ago</span>
+                        <p>Completed the final review for Project X.</p>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-time">5 hours ago</span>
+                        <p>Uploaded the latest build to the server.</p>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-time">Yesterday</span>
+                        <p>Created the initial wireframe for the new UI design.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Graph Section -->
+            <section class="performance-graph">
+                <h2>Performance Over Time</h2>
+                <div class="graph-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Dashboard Widgets Section -->
+            <section class="dashboard-widgets">
+                <h2>Recent Files</h2>
+                <div class="widget-container">
+                    <div class="widget">
+                        <h4>Recent Files</h4>
+                        <ul class="file-list">
+                            <li><a href="/files/project-report.pdf">Project Report - January 2025</a></li>
+                            <li><a href="/files/tech-stack-overview.docx">Tech Stack Overview</a></li>
+                            <li><a href="/files/analytics-dashboard.csv">Analytics Dashboard Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <h4>Latest Notifications</h4>
+                        <ul class="notification-list">
+                            <li>New report is available for download!</li>
+                            <li>Your API usage has exceeded 75% of the limit.</li>
+                            <li>Your task manager has a pending item that needs attention.</li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <h4>Server Health</h4>
+                        <ul class="health-list">
+                            <li>CPU Usage: <span class="status">75% - High</span></li>
+                            <li>Memory Usage: <span class="status">60% - Normal</span></li>
+                            <li>Disk Space: <span class="status">50% - Normal</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Include Chart.js for Performance Graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('performanceChart').getContext('2d');
+        var performanceChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Performance',
+                    data: [65, 59, 80, 81, 56, 55, 40, 50, 75, 80, 90, 100],
+                    borderColor: '#00eaff',
+                    backgroundColor: 'rgba(0, 234, 255, 0.2)',
+                    borderWidth: 2,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

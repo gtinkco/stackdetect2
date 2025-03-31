@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Technologies</title>
+    <link rel="stylesheet" href="/css/trending.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Inline styles for quick preview */
+        body {
+            margin: 0;
+            font-family: 'Exo', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .header {
+            background-color: #1e1e1e;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            color: #00eaff;
+        }
+
+        .header nav a {
+            color: #00eaff;
+            margin-left: 1rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .trending-container {
+            padding: 2rem;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .filters select {
+            padding: 0.5rem;
+            border: 1px solid #333;
+            background: #1e1e1e;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .filters button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #00eaff;
+            color: #121212;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tech-card {
+            background-color: #1e1e1e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .tech-card h2 {
+            color: #00eaff;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-card p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .tech-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00eaff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            text-align: center;
+            background-color: #1e1e1e;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Trending Technologies</h1>
+        <nav>
+            <a href="/tools">Back To Tools</a>
+            
+        </nav>
+    </header>
+
+    <main class="trending-container">
+        <section class="filters">
+            <h2>Explore Technologies</h2>
+            <form action="/filter" method="GET" style="display: flex; gap: 1rem;">
+                <select name="category" id="category">
+                    <option value="all">All Categories</option>
+                    <option value="frontend">Frontend</option>
+                    <option value="backend">Backend</option>
+                    <option value="ai">AI/ML</option>
+                    <option value="cloud">Cloud Computing</option>
+                </select>
+                <button type="submit">Filter</button>
+            </form>
+        </section>
+
+        <section class="tech-grid">
+            <% if (trendingTechnologies.length > 0) { %>
+                <% trendingTechnologies.forEach(tech => { %>
+                    <div class="tech-card">
+                        <h2><%= tech.name %></h2>
+                        <p><strong>Category:</strong> <%= tech.category %></p>
+                        <p><strong>Popularity:</strong> <%= tech.popularity %>%</p>
+                        <p><strong>Description:</strong> <%= tech.description %></p>
+                        <a href="<%= tech.link %>" target="_blank">Learn More</a>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No technologies available at the moment. Check back later!</p>
+            <% } %>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 StackDetect | Empowering Your Tech Decisions</p>
+    </footer>
+</body>
+</html>

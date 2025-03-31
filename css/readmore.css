@@ -1,0 +1,67 @@
+/* General Styling that is already in styles.css */
+
+/* Read More Page Styling */
+.readmore-main {
+    background-color: #121212; /* Dark background to match the site theme */
+    padding: 2rem;
+    color: #fff;
+    font-family: 'Source Code Pro', sans-serif;
+}
+
+.single-post {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for post title and intro */
+.post-title {
+    font-size: 2.5rem;
+    color: #00eaff; /* Neon blue accent */
+    margin-bottom: 1rem;
+}
+
+.post-date {
+    color: #00eaff;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Post content and headings */
+.post-image {
+    width: 20%;
+    height: 20%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #00eaff; /* Neon blue accent */
+    margin-top: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #d3d3d3;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Footer styling inherited from styles.css */
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    color: #d3d3d3;
+    font-size: 1rem;
+}
